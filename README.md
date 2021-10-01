@@ -6,7 +6,7 @@ This is an Ardunino Sketch for ESP8266 that receives the current time from NTP s
 - [Borad Manager for ESP8266](http://arduino.esp8266.com/stable/package_esp8266com_index.json)
 
 # How to use
-1. After upload image to ESP8266 module, connect PC to ESP8266 module with serial port.<br>
+1. After uploading the built image to ESP8266 module, connect PC to ESP8266 module with serial port.<br>
    ***Terminal Setting***<br>
    New Line Rx: CR+LF<br>
    New Line Tx: CR<br>
@@ -27,10 +27,10 @@ This is an Ardunino Sketch for ESP8266 that receives the current time from NTP s
    [Fri Oct 01 16:13:22.983 2021] OK_21-10-01-5T16:13:23
    [Fri Oct 01 16:13:30.984 2021] OK_21-10-01-5T16:13:31
    ```
-   Before captureing the log, PC time is adjusted to ntp.nict.jop. And we got the time from it. The timestamp in the log (inside the blankets) are PC time. We can see the error between the log receive time and log time is with several milli seconds.
+   Before capturing the log, PC time is adjusted to ntp.nict.jp. ESP8366 module also got time from it. The timestamp in the log (inside the blankets) are PC time. We can see the error between the log receive time and log time is within about 100 milli seconds.
    
 # Tips
-This implemtation decides the log send timing by taking acount of SNTP packet trasmission delay, internal process delay, and serial comunication delay of sending time info to the client device. If you change serial boad rate and/or output time format, you should adjust the delay calculation code in get_time function. 
+This implementation decides the log send timing by taking acount of SNTP packet trasmission delay, internal process delay, and serial comunication delay of sending time info to the client device. If you change serial boad rate and/or output time format, you should adjust the delay calculation code in get_time function.
 
 # Verified Board Configuration
 I connected ESP-WROOM-02 module and USB-serial converter on bread board. The connection diagram is the following.
